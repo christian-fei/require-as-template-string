@@ -1,0 +1,24 @@
+{
+  "name": "require-as-template-string",
+  "version": "0.0.2",
+  "main": "index.js",
+  "scripts": {
+    "test": "m.test",
+    "m.test": "m.test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christian-fei/require-as-template-string.git"
+  },
+  "bugs": {
+    "url": "https://github.com/christian-fei/require-as-template-string/issues"
+  },
+  "homepage": "https://github.com/christian-fei/require-as-template-string#readme",
+  "description": "",
+  "devDependencies": {
+    "m.test": "0.0.53"
+  }
+}

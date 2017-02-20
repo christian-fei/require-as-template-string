@@ -23,5 +23,5 @@ test('requires a module', () => {
 test('requires multiple modules', () => {
   const url = require('url')
   const net = require('net')
-  deepEqual([url, net], r`url,net`)
+  deepEqual({url, net}, r`url,net`)
 })

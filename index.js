@@ -1,4 +1,12 @@
-module.exports.r = module.exports.rr = global.r = global.rr = ([m], _) => {
-  const mm = m.split(',').map(m => require(m))
-  return mm.length === 1 ? mm[0] : mm
+'use strict'
+
+const {assign} = Object
+
+module.exports.r = module.exports.rr = global.r = global.rr = ([requireString], _) => {
+  const modules = requireString.split(',')
+  if (modules.length === 1) {
+    return require(modules[0])
+  }
+  const toModuleDict = (dict, name) => assign(dict, {[name]: require(name)})
+  return modules.reduce(toModuleDict, {})
 }

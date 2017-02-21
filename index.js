@@ -2,11 +2,12 @@
 
 const {assign} = Object
 
-module.exports.r = module.exports.rr = global.r = global.rr = ([requireString], _) => {
-  const modules = requireString.split(',')
-  if (modules.length === 1) {
-    return require(modules[0])
+module.exports.r = module.exports.rr = global.r = global.rr = ([name], _) => {
+  return name.includes(',')
+    ? name.split(',').reduce(toModule, {})
+    : require(name)
+
+  function toModule (dict, name, i, {length}) {
+    return assign(dict, {[name]: require(name), [i]: require(name), length})
   }
-  const toModuleDict = (dict, name) => assign(dict, {[name]: require(name)})
-  return modules.reduce(toModuleDict, {})
 }

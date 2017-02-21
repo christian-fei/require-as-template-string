@@ -28,7 +28,3 @@ const [url,net] = r`url,net`
 ```
 rr`url,net` === r`url,net`
 ```
-
-# todo
-
-- experiment with object destructuring when requiring multiple modules.
